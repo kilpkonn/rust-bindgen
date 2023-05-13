@@ -160,7 +160,7 @@ pub trait ParseCallbacks: fmt::Debug {
         None
     }
 
-    /// .
+    /// Allows renaming the name of a field, replacing `_name`.
     fn process_field_name(
         &self,
         _parent_name: &str,
