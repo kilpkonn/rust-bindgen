@@ -159,6 +159,15 @@ pub trait ParseCallbacks: fmt::Debug {
     fn wrap_as_variadic_fn(&self, _name: &str) -> Option<String> {
         None
     }
+
+    /// .
+    fn process_field_name(
+        &self,
+        _parent_name: &str,
+        _name: &str,
+    ) -> Option<String> {
+        None
+    }
 }
 
 /// Relevant information about a type to which new derive attributes will be added using
