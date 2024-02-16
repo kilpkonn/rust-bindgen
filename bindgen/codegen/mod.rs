@@ -1456,9 +1456,9 @@ impl<'a> FieldCodegen<'a> for FieldData {
             .map(|name| {
                 let name = ctx.rust_mangle(name);
                 ctx.options()
-                    .process_field_name(&parent_name, &name)
-                    .map(|name| Cow::Owned(name))
-                    .unwrap_or(name.to_owned())
+                    .process_field_name(parent_name, &name)
+                    .map(Cow::Owned)
+                    .unwrap_or(name.clone())
             })
             .expect("Each field should have a name in codegen!");
         let field_ident = ctx.rust_ident_raw(&field_name);
